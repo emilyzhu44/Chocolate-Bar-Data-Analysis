@@ -57,3 +57,5 @@ df["ingredients"] = df_modified
 ```python
 df.head()
 ```
+![df head()](https://github.com/user-attachments/assets/1f6f1d49-b30a-482a-b910-b90f4ac8f97b)
+
