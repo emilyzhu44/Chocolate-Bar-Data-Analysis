@@ -1,4 +1,4 @@
-Project Overview
+##Project Overview
 The Chocolate Bar Ratings dataset was created by the Manhattan Chocolate Society through 65+ curated tastings between 2007–2016. The group evaluated fine dark chocolate bars based on factors like cacao origin, bean type, and manufacturing process. Data was gathered from expert reviews, direct sourcing, and collaboration with chocolate makers. The goal: to explore and document the unique flavor profiles of high-quality chocolate.
 
 This analysis aims to uncover:
