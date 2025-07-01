@@ -60,11 +60,12 @@ The database structure as seen below consists of 1 table with a total row count 
 ### [Q1: Does Continent of Bean Origin Affect Rating?](./chocolate_analysis.ipynb#q1-does-the-beans-continent-of-origin-have-a-statistically-significant-impact-on-rating)
 - Box plot showed lower median for "Blend", but mean differences were significant in post-hoc analysis.
 
-- **Tukey HSD** test results:
-  - "Blend" rated higher than:
-  - Africa (p = 0.0257)
-  - North America (p = 0.0138)
-  - South America (p = 0.0037)
+**Tukey HSD test results:** 
+
+"Blend" rated higher than:
+- Africa (p = 0.0257)
+- North America (p = 0.0138)
+- South America (p = 0.0037)
 
 <div align="center">
       
@@ -72,51 +73,88 @@ The database structure as seen below consists of 1 table with a total row count 
 
 </div>
 
+<div align="center">
+      
+![continent of bean origin and rating box and whiskers](https://github.com/emilyzhu44/Chocolate-Bar-Data-Analysis-/blob/main/visualization%20(1).png?raw=true)
+
+</div>
+
+<div align="center">
+
+| group1        | group2        | meandiff | p-adj   | lower   | upper   | reject |
+|---------------|---------------|----------|---------|---------|---------|--------|
+| Africa        | Blend         | -0.1299  | 0.0257  | -0.2503 | -0.0095 | True   |
+| Blend         | North America | 0.1271   | 0.0138  | 0.0163  | 0.2378  | True   |
+| Blend         | South America | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
+
+</div>
+
+<div align="center">
+      
+##### Statistically Signifcant Tukey HSD Output
+
+</div>
 
 ### [Q2: Does Ingredient Type Impact Rating?](./chocolate_analysis.ipynb#q2-are-certain-characteristics-more-associated-with-chocolate-bars-of-specific-ingredients-bean-origins-and-ratings)
 
-Bars with more complex recipes (e.g., vanilla or lecithin added) tended to have higher ratings. Not all differences were significant, but several ingredient combinations stood out in post-hoc analysis.
+- Bars with more complex recipes (e.g., vanilla or lecithin added) tended to have higher ratings. Not all differences were significant, but several ingredient combinations stood out in post-hoc analysis.
 
-Tukey HSD test results:
-Bars with beans, sugar, cocoa butter, and vanilla rated higher than:
-beans and sugar (p < 0.0000)
-beans, sugar, and cocoa butter (p < 0.0000)
-beans, sugar, cocoa butter, and lecithin (p < 0.0000)
-
-
-Bars with beans, sugar, cocoa butter, vanilla, and lecithin rated higher than:
-beans and sugar (p = 0.0092)
-beans, sugar, and cocoa butter (p < 0.0000)
+**Tukey HSD test results:**
+- Bars with beans, sugar, cocoa butter, and vanilla rated higher than:
+  - beans and sugar (p < 0.0000)
+  - beans, sugar, and cocoa butter (p < 0.0000)
+  - beans, sugar, cocoa butter, and lecithin (p < 0.0000)
 
 
-Bars with beans, sugar, and lecithin rated higher than:
-beans and sugar (p = 0.0396)
-beans, sugar, and cocoa butter (p = 0.0118)
+- Bars with beans, sugar, cocoa butter, vanilla, and lecithin rated higher than:
+  - beans and sugar (p = 0.0092)
+  - beans, sugar, and cocoa butter (p < 0.0000)
 
 
-Bars with alternative sweeteners rated higher than:
-beans, sugar, and cocoa butter (p = 0.0053)
-
-OLS Model: Statistical significant rating when grouped by ingredient group
-
+- Bars with beans, sugar, and lecithin rated higher than:
+  - beans and sugar (p = 0.0396)
+  - beans, sugar, and cocoa butter (p = 0.0118)
 
 
-sum_sq
-df
-F
-PR(>F)
-ingredients
-24.017872
-20.0
-6.858351
-7.151651e-19
-Residual
-424.090908
-2422.0
-NaN
-NaN
+- Bars with alternative sweeteners rated higher than:
+  - beans, sugar, and cocoa butter (p = 0.0053)
 
-Tukey Output here
+<div align="center">
+      
+|               | sum_sq        | df       | F       | PR(>F)      | 
+|---------------|---------------|----------|---------|---------    |
+| ingredients   | 24.017872     | 20.0     |6.858351 | 7.151651e-19| 
+| Residual      | 424.090908    | 2422.0   | NaN     | NaN         | 
+
+</div>
+
+<div align="center">
+      
+##### OLS Model: Statistical significant rating when grouped by ingredient group
+
+</div>
+
+<div align="center">
+
+| group1                             | group2        | meandiff | p-adj   | lower   | upper   | reject |
+|------------------------------------|---------------|----------|---------|---------|---------|--------|
+| beans, sugar | beans, sugar, cocoa_butter, vanilla         | -0.1299  | 0.0257  | -0.2503 | -0.0095 | True   |
+| beans, sugar | beans, sugar, cocoa_butter, vanilla, lecithin	 | 0.1271   | 0.0138  | 0.0163  | 0.2378  | True   |
+| beans, sugar | beans, sugar, lecithin | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
+| beans, sugar, cocoa_butter | beans, sugar, cocoa_butter, vanilla	         | -0.1299  | 0.0257  | -0.2503 | -0.0095 | True   |
+| beans, sugar, cocoa_butter | beans, sugar, cocoa_butter, vanilla, lecithin | 0.1271   | 0.0138  | 0.0163  | 0.2378  | True   |
+| beans, sugar, cocoa_butter | beans, sugar, lecithin	 | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
+| beans, sugar, cocoa_butter | beans, sweetener_other_than_white_cane_or_beet...	 | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
+| eans, sugar, cocoa_butter, lecithin| beans, sugar, cocoa_butter, vanilla  | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
+</div>
+
+<div align="center">
+      
+##### Statistically Signifcant Tukey HSD Output
+
+</div>
+
+
 Q3: Does Number of Ingredients Affect Rating? 
 Chocolate bars with 4 and 5 ingredients had a statistically greater rating than bars with 2 and 3 ingredients
 
