@@ -57,7 +57,8 @@ The database structure as seen below consists of 1 table with a total row count 
     - Suggests that subjectivity or unobserved variables (e.g., price, branding) play a key role in ratings.
   
 ## Deep Dive Analysis
-### [Q1: Does Continent of Bean Origin Affect Rating?](./chocolate_analysis.ipynb#q1-does-the-beans-continent-of-origin-have-a-statistically-significant-impact-on-rating)
+### Q1: Does the Continent of Bean Origin Affect Rating?
+
 - Box plot showed lower median for "Blend", but mean differences were significant in post-hoc analysis.
 
 **Tukey HSD test results:** 
@@ -95,7 +96,7 @@ The database structure as seen below consists of 1 table with a total row count 
 
 </div>
 
-### [Q2: Does Ingredient Type Impact Rating?](./chocolate_analysis.ipynb#q2-are-certain-characteristics-more-associated-with-chocolate-bars-of-specific-ingredients-bean-origins-and-ratings)
+### Q2: Does the Ingredient Type Impact Rating?
 
 - Bars with more complex recipes (e.g., vanilla or lecithin added) tended to have higher ratings. Not all differences were significant, but several ingredient combinations stood out in post-hoc analysis.
 
@@ -156,7 +157,7 @@ The database structure as seen below consists of 1 table with a total row count 
 </div>
 
 
-### [Q3: Does Number of Ingredients Affect Rating?](./chocolate_analysis.ipynb#q3-do-the-number-of-ingredients-have-a-statistically-significant-impact-on-rating-score)
+### Q3: Does the Number of Ingredients Affect Rating?
 
 - Chocolate bars with 4 and 5 ingredients had a statistically greater rating than bars with 2 and 3 ingredients
 
@@ -193,7 +194,7 @@ The database structure as seen below consists of 1 table with a total row count 
 </div>
 
 
-### [Q4: Can the rating of a chocolate be predicted well using the information about its origin and ingredients?](./chocolate_analysis.ipynb#q4-Can-the-rating-of-a-chocolate-be-predicted-well-using-the-information-about-its-origin-and-ingredients)
+### Q4: Can the rating of a chocolate be predicted well using the information about its origin and ingredients?
 
 - Despite some strong training R² scores, **all models underperformed in validation** — suggesting **overfitting** and limited predictive power with available variables.
 
