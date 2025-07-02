@@ -123,29 +123,30 @@ The database structure as seen below consists of 1 table with a total row count 
       
 |               | sum_sq        | df       | F       | PR(>F)      | 
 |---------------|---------------|----------|---------|---------    |
-| ingredients   | 24.017872     | 20.0     |6.858351 | 7.151651e-19| 
+| ingredients   | 24.017872     | 20.0     |6.858351 | <code> 7.151651e-19 </code>| 
 | Residual      | 424.090908    | 2422.0   | NaN     | NaN         | 
 
 </div>
 
 <div align="center">
       
-##### OLS Model: Statistical significant rating when grouped by ingredient group
+##### OLS Model: Ingredients with Rating
 
 </div>
 
 <div align="center">
 
-| group1                             | group2        | meandiff | p-adj   | lower   | upper   | reject |
-|------------------------------------|---------------|----------|---------|---------|---------|--------|
-| beans, sugar | beans, sugar, cocoa_butter, vanilla         | -0.1299  | 0.0257  | -0.2503 | -0.0095 | True   |
-| beans, sugar | beans, sugar, cocoa_butter, vanilla, lecithin	 | 0.1271   | 0.0138  | 0.0163  | 0.2378  | True   |
-| beans, sugar | beans, sugar, lecithin | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
-| beans, sugar, cocoa_butter | beans, sugar, cocoa_butter, vanilla	         | -0.1299  | 0.0257  | -0.2503 | -0.0095 | True   |
-| beans, sugar, cocoa_butter | beans, sugar, cocoa_butter, vanilla, lecithin | 0.1271   | 0.0138  | 0.0163  | 0.2378  | True   |
-| beans, sugar, cocoa_butter | beans, sugar, lecithin	 | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
-| beans, sugar, cocoa_butter | beans, sweetener_other_than_white_cane_or_beet...	 | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
-| eans, sugar, cocoa_butter, lecithin| beans, sugar, cocoa_butter, vanilla  | 0.1397   | 0.0037  | 0.0304  | 0.2491  | True   |
+| group1                             | group2                                                             | meandiff | p-adj  | lower    | upper    | reject |
+|-----------------------------------|---------------------------------------------------------------------|----------|--------|----------|----------|--------|
+| beans, sugar                      | beans, sugar, cocoa_butter, vanilla                                 | -0.2543  | 0.0000 | -0.3920  | -0.1166  | True   |
+| beans, sugar                      | beans, sugar, cocoa_butter, vanilla, lecithin                       | -0.1398  | 0.0092 | -0.2633  | -0.0162  | True   |
+| beans, sugar                      | beans, sugar, lecithin                                              | -0.5420  | 0.0396 | -1.0735  | -0.0104  | True   |
+| beans, sugar, cocoa_butter        | beans, sugar, cocoa_butter, vanilla                                 | -0.3034  | 0.0000 | -0.4379  | -0.1688  | True   |
+| beans, sugar, cocoa_butter        | beans, sugar, cocoa_butter, vanilla, lecithin                       | -0.1889  | 0.0000 | -0.3088  | -0.0689  | True   |
+| beans, sugar, cocoa_butter        | beans, sugar, lecithin                                              | -0.5910  | 0.0118 | -1.1218  | -0.0603  | True   |
+| beans, sugar, cocoa_butter        | beans, sweetener_other_than_white_cane_or_beet_sugar                | -0.3189  | 0.0053 | -0.5915  | -0.0462  | True   |
+| beans, sugar, cocoa_butter, lecithin | beans, sugar, cocoa_butter, vanilla                               | -0.2381  | 0.0000 | -0.3920  | -0.0843  | True   |
+
 </div>
 
 <div align="center">
@@ -155,64 +156,75 @@ The database structure as seen below consists of 1 table with a total row count 
 </div>
 
 
-Q3: Does Number of Ingredients Affect Rating? 
-Chocolate bars with 4 and 5 ingredients had a statistically greater rating than bars with 2 and 3 ingredients
+### [Q3: Does Number of Ingredients Affect Rating?](./chocolate_analysis.ipynb#q2-do-the-number-of-ingredients-have-a-statistically-significant-impact-on-rating-score)
 
-OLS Model: Statistical significant rating when grouped by number of ingredients
+- Chocolate bars with 4 and 5 ingredients had a statistically greater rating than bars with 2 and 3 ingredients
+
+<div align="center">
+      
+|               | sum_sq        | df       | F       | PR(>F)      | 
+|---------------|---------------|----------|---------|---------    |
+| number_of_ingredients   | 4.377233     | 1.0     |24.079483 | <code> 9.853255e-07 </code> | 
+| Residual      | 443.731547    | 2441.0   | NaN     | NaN         | 
+
+</div>
+
+<div align="center">
+      
+##### OLS Model: Number of Ingredients and Rating
+
+</div>
+
+<div align="center">
+
+| group1 | group2 | meandiff | p-adj  | lower   | upper   | reject |
+|--------|--------|----------|--------|---------|---------|--------|
+| 2      | 4      | -0.0901  | 0.0042 | -0.1612 | -0.0189 | True   |
+| 2      | 5      | -0.1382  | 0.0008 | -0.2361 | -0.0402 | True   |
+| 3      | 4      | -0.1409  | 0.0000 | -0.2083 | -0.0735 | True   |
+| 3      | 5      | -0.1890  | 0.0000 | -0.2842 | -0.0937 | True   |
+
+</div>
+
+<div align="center">
+      
+##### Statistically Signifcant Tukey HSD Output
+
+</div>
 
 
-sum_sq
-df
-F
-PR(>F)
-number_of_ingredients
-4.377233
-1.0
-24.079483
-9.853255e-07
-Residual
-443.731547
-2441.0
-NaN
-NaN
+### [Q4: Can the rating of a chocolate be predicted well using the information about its origin and ingredients?](./chocolate_analysis.ipynb#q2-Can-the-rating-of-a-chocolate-be-predicted-well-using-the-information-about-its-origin-and-ingredients)
 
+- Despite some strong training R² scores, **all models underperformed in validation** — suggesting **overfitting** and limited predictive power with available variables.
 
-Tukey Output here
-Q4: Can the rating of a chocolate be predicted well using the information about its origin and ingredients?
-Despite some strong training R² scores, all models underperformed in validation — suggesting overfitting and limited predictive power with available variables.
+<div align="center">
+      
+| Model              | R² (Train)           | Cross Validation Score     |
+|--------------------|----------------------|-----------------------------|
+| K-neighbor Regressor | 0.1645               | -0.0422                     |
+| Voting Regressor     | 0.0445               | -0.0046                     |
+| Stacking Regressor   | 0.0521               | 0.0213                      |
+| Ridge Regressor      | 0.4106               | -0.0311                     |
+| Decision Tree        | 0.8016               | -0.3172                     |
+      
+</div>
 
-Model 
-r^2 (Train)
-Cross Validation Score
-K-neighbor Regressor
-0.16451022011857908
--0.04220942435762818
-Voting Regressor
-0.04453802830913156
--0.004608377846626132
-Stacking Regressor
-0.052100773800294764
-0.021330995160120225
-Ridge Regressor
-0.41062779690905826
--0.031115755961708447
-Decision Tree
-0.8015835494060043
--0.31724584566011876
+## Recommendations 
 
-Recommendations 
-Modeling Recommendations
-Avoid R² alone as a performance metric; consider MAE or RMSE.
-Try balancing variables through random undersampling (eg:there were significantly more South American and North American bean origins in our data and company location was heavily skewed within the US)
-Check for multicollinearity between ingredient indicators.
-Non-linear models (e.g., Random Forests or Neural Networks) may capture more nuance.
+**Modeling Recommendations**
 
-Business Recommendations
-Ingredient Strategy:
-Avoid combinations: "beans and sugar", or "beans, sugar, cocoa butter", and “beans, sugar, cocoa butter and lecithin”
-Favor 4–5 ingredient formulations over other ingredient formulations (with the exception of “beans, sugar, cocoa butter and lecithin”)
-Sourcing Strategy:
-Consider incorporating blended origin beans or exploring origins other than Africa, North America, or South America.
-Further Data Needs:
-Explore variables such as price, brand reputation, or reviewer ID to improve rating prediction.
+- Avoid R² alone as a performance metric; consider MAE or RMSE.
+- Try balancing variables through random undersampling (eg:there were significantly more South American and North American bean origins in our data and company location was heavily skewed within the US)
+- Check for multicollinearity between ingredient indicators.
+- Non-linear models (e.g., Random Forests or Neural Networks) may capture more nuance.
+
+**Business Recommendations**
+
+- Ingredient Strategy:
+  - Avoid combinations: "beans and sugar", or "beans, sugar, cocoa butter", and “beans, sugar, cocoa butter and lecithin”
+  - Favor 4–5 ingredient formulations over other ingredient formulations (with the exception of “beans, sugar, cocoa butter and lecithin”)
+- Sourcing Strategy:
+  - Consider incorporating blended origin beans or exploring origins other than Africa, North America, or South America.
+- Further Data Needs:
+  - Explore variables such as price, brand reputation, or reviewer ID to improve rating prediction.
 
