@@ -156,7 +156,7 @@ The database structure as seen below consists of 1 table with a total row count 
 </div>
 
 
-### [Q3: Does Number of Ingredients Affect Rating?](./chocolate_analysis.ipynb#q2-do-the-number-of-ingredients-have-a-statistically-significant-impact-on-rating-score)
+### [Q3: Does Number of Ingredients Affect Rating?](./chocolate_analysis.ipynb#q3-do-the-number-of-ingredients-have-a-statistically-significant-impact-on-rating-score)
 
 - Chocolate bars with 4 and 5 ingredients had a statistically greater rating than bars with 2 and 3 ingredients
 
@@ -193,7 +193,7 @@ The database structure as seen below consists of 1 table with a total row count 
 </div>
 
 
-### [Q4: Can the rating of a chocolate be predicted well using the information about its origin and ingredients?](./chocolate_analysis.ipynb#q2-Can-the-rating-of-a-chocolate-be-predicted-well-using-the-information-about-its-origin-and-ingredients)
+### [Q4: Can the rating of a chocolate be predicted well using the information about its origin and ingredients?](./chocolate_analysis.ipynb#q4-Can-the-rating-of-a-chocolate-be-predicted-well-using-the-information-about-its-origin-and-ingredients)
 
 - Despite some strong training R² scores, **all models underperformed in validation** — suggesting **overfitting** and limited predictive power with available variables.
 
